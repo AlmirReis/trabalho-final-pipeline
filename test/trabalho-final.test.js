@@ -20,7 +20,9 @@ describe('Testes da disciplina - fundamentos JS', () => {
   });
 
   test('Deve retornar a atividade adequada para porte pequeno', () => {
-    expect(decidirTipoDeAtividadePorPorte('pequeno')).toBe('brincar dentro de casa');
+    expect(decidirTipoDeAtividadePorPorte('pequeno')).toBe(
+      'brincar dentro de casa'
+    );
   });
 
   test('Deve retornar valor de forma assíncrona', async () => {
