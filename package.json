@@ -4,6 +4,7 @@
   "description": "Projeto final com pipeline integrada para testes e deploy",
   "main": "trabalho.js",
   "scripts": {
+    "format": "prettier --write .",
     "test": "jest",
     "e2e": "playwright test",
     "lint": "tsc --noEmit && prettier --check .",

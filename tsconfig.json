@@ -5,7 +5,11 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true
   },
-  "include": ["**/*.ts", "**/*.js"]
+  "include": ["./**/*.js", "./**/*.ts"],
+  "exclude": ["node_modules", "e2e", ".github"]
 }
