@@ -1,34 +1,30 @@
-const assert = require('assert');
 const {
   geradorDeTagsDeIdentificacao,
   verificarSePodeSerAdotado,
   calcularConsumoDeRacao,
   decidirTipoDeAtividadePorPorte,
   buscarDadoAsync,
-} = require('../trabalho'); // sobe um nível até a raiz
+} = require('../trabalho');
 
 describe('Testes da disciplina - fundamentos JS', () => {
-  it('QUANDO informar um nome para o Pet, DEVE ser impresso na tag com letras maiúsculas', () => {
-    assert.strictEqual(geradorDeTagsDeIdentificacao('Pantera'), 'PANTERA');
+  test('Deve imprimir o nome do Pet em letras maiúsculas', () => {
+    expect(geradorDeTagsDeIdentificacao('Pantera')).toBe('PANTERA');
   });
 
-  it('QUANDO a idade = 1 + porte M, DEVE ser permitida a adoção', () => {
-    assert.strictEqual(verificarSePodeSerAdotado(1, 'M'), true);
+  test('Deve permitir adoção para idade >= 1 e porte M', () => {
+    expect(verificarSePodeSerAdotado(1, 'M')).toBe(true);
   });
 
-  it('QUANDO o peso = 14.5, DEVE ser retornado 4350 gramas para o consumo diário', () => {
-    assert.strictEqual(calcularConsumoDeRacao('Pitoco', 1, 14.5), 4350);
+  test('Deve retornar 4350 gramas para consumo diário com peso 14.5', () => {
+    expect(calcularConsumoDeRacao('Pitoco', 1, 14.5)).toBe(4350);
   });
 
-  it('QUANDO o porte = pequeno, DEVE ser retornada a atividade adequada', () => {
-    assert.strictEqual(
-      decidirTipoDeAtividadePorPorte('pequeno'),
-      'brincar dentro de casa'
-    );
+  test('Deve retornar a atividade adequada para porte pequeno', () => {
+    expect(decidirTipoDeAtividadePorPorte('pequeno')).toBe('brincar dentro de casa');
   });
 
-  it('QUANDO buscar dado de exemplo, DEVE retornar um valor de forma assíncrona', async () => {
+  test('Deve retornar valor de forma assíncrona', async () => {
     const resultado = await buscarDadoAsync();
-    assert.strictEqual(resultado, 'Pipoca');
+    expect(resultado).toBe('Pipoca');
   });
 });
