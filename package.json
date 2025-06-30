@@ -1,0 +1,19 @@
+{
+  "name": "trabalho-final-pipeline",
+  "version": "1.0.0",
+  "description": "Projeto final com pipeline integrada para testes e deploy",
+  "main": "trabalho.js",
+  "scripts": {
+    "test": "jest",
+    "e2e": "playwright test",
+    "lint": "tsc --noEmit && prettier --check .",
+    "lint:fix": "prettier --write .",
+    "test:all": "yarn lint && yarn test && yarn e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.36.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.0",
+    "typescript": "^5.0.4"
+  }
+}
